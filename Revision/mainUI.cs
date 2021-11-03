@@ -159,9 +159,9 @@ namespace WindowsFormsApplication1
             string estacion, string archivo, string rutaAudio, DateTime inicio, string file)
         {
             string x;
-            string audio = "00";
             string hora = "";
             int carpAudio = 00;
+            string audio = "00";
             bool existe = false;
             string[] codigo = { "", "" };
             List<Faltante> faltantes = new List<Faltante>();

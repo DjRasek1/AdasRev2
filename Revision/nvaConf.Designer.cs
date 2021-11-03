@@ -40,7 +40,6 @@
             this.btCancel = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
             this.btDel = new System.Windows.Forms.Button();
-            this.btnSwitch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgConfig)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +89,7 @@
             // btUp
             // 
             this.btUp.Image = ((System.Drawing.Image)(resources.GetObject("btUp.Image")));
-            this.btUp.Location = new System.Drawing.Point(397, 270);
+            this.btUp.Location = new System.Drawing.Point(397, 193);
             this.btUp.Name = "btUp";
             this.btUp.Size = new System.Drawing.Size(54, 49);
             this.btUp.TabIndex = 1;
@@ -100,7 +99,7 @@
             // btDn
             // 
             this.btDn.Image = ((System.Drawing.Image)(resources.GetObject("btDn.Image")));
-            this.btDn.Location = new System.Drawing.Point(457, 270);
+            this.btDn.Location = new System.Drawing.Point(457, 193);
             this.btDn.Name = "btDn";
             this.btDn.Size = new System.Drawing.Size(50, 49);
             this.btDn.TabIndex = 2;
@@ -133,7 +132,7 @@
             // 
             this.btAdd.BackColor = System.Drawing.Color.Lime;
             this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Location = new System.Drawing.Point(397, 156);
+            this.btAdd.Location = new System.Drawing.Point(397, 79);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(110, 51);
             this.btAdd.TabIndex = 5;
@@ -145,7 +144,7 @@
             // 
             this.btDel.BackColor = System.Drawing.Color.Red;
             this.btDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDel.Location = new System.Drawing.Point(397, 213);
+            this.btDel.Location = new System.Drawing.Point(397, 136);
             this.btDel.Name = "btDel";
             this.btDel.Size = new System.Drawing.Size(110, 51);
             this.btDel.TabIndex = 6;
@@ -153,25 +152,12 @@
             this.btDel.UseVisualStyleBackColor = false;
             this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
-            // btnSwitch
-            // 
-            this.btnSwitch.BackColor = System.Drawing.Color.Orange;
-            this.btnSwitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSwitch.Location = new System.Drawing.Point(397, 79);
-            this.btnSwitch.Name = "btnSwitch";
-            this.btnSwitch.Size = new System.Drawing.Size(110, 71);
-            this.btnSwitch.TabIndex = 5;
-            this.btnSwitch.Text = "Configuracion de Usuarios";
-            this.btnSwitch.UseVisualStyleBackColor = false;
-            this.btnSwitch.Click += new System.EventHandler(this.btSwitch_Click);
-            // 
             // nvaConf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 425);
             this.Controls.Add(this.btDel);
-            this.Controls.Add(this.btnSwitch);
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btOk);
@@ -201,6 +187,5 @@
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.DataGridView dgConfig;
         private System.Windows.Forms.Button btDel;
-        private System.Windows.Forms.Button btnSwitch;
     }
 }

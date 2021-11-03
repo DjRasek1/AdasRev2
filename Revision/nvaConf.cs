@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
 using System.IO;
 using RskLib;
 
@@ -7,11 +8,11 @@ namespace WindowsFormsApplication1
 {
     public partial class nvaConf : Form
     {
-        bool estaciones = false;
 
         public nvaConf()
         {
             InitializeComponent();
+
 
             if (File.Exists("config.txt"))
             {
@@ -24,6 +25,7 @@ namespace WindowsFormsApplication1
 
                 foreach(string item in lineas){
                     dgConfig.Rows.Add(siglas[indice], rutas[indice]);
+
                     indice++;
                 }
             }
@@ -32,19 +34,17 @@ namespace WindowsFormsApplication1
         //Botón Agregar Estación
         private void btAdd_Click(object sender, EventArgs e)
         {
-            if (estaciones)
-            {
-                NvaEst nueva = new NvaEst();
-                nueva.ShowDialog();
-                string ruta = nueva.tbRuta.Text;
-                string Siglas = nueva.tbSiglas.Text;
+            NvaEst nueva = new NvaEst();
+            nueva.ShowDialog();
+            string ruta = nueva.tbRuta.Text;
+            string Siglas = nueva.tbSiglas.Text;
 
-                if (nueva.DialogResult == DialogResult.OK)
-                {
-                    ruta = ruta.Remove(ruta.Length - 7);
-                    dgConfig.Rows.Add(Siglas, ruta);
-                } 
+            if (nueva.DialogResult == DialogResult.OK)
+            {
+                ruta = ruta.Remove(ruta.Length - 7);
+                dgConfig.Rows.Add(Siglas, ruta);
             }
+
         }
 
         private void btCancel_Click(object sender, EventArgs e)
@@ -166,32 +166,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void btSwitch_Click(object sender, EventArgs e)
-        {
-            if (estaciones)
-            {
-                btnSwConfig("Siglas", "Ruta", "Agregar Estacion", 
-                    "Eliminar Estacion", "Configuracion de Estciones");
-                btUp.Show();
-                btDn.Show();
-                this.btnSwitch.Text = "Configuracion de Usuarios";
-                this.btnSwitch.BackColor = System.Drawing.Color.Orange;
-                this.btnSwitch.ForeColor = System.Drawing.Color.Black;
-                llenarDataGrid("config.txt");
-            }
-            else
-            {
-                btnSwConfig("Usuarios", "", "Agregar Usuario",
-                    "Eliminar Usuario", "Configuracion de Usuarios");
-                btUp.Hide();
-                btDn.Hide();
-                this.btnSwitch.Text = "Configuracion de Estaciones";
-                this.btnSwitch.BackColor = System.Drawing.Color.Blue;
-                this.btnSwitch.ForeColor = System.Drawing.Color.White;
-                llenarDataGrid("userConfig.txt");
-            }
-        }
-
         private void llenarDataGrid(string datos)
         {
             if (File.Exists(datos))
@@ -205,18 +179,9 @@ namespace WindowsFormsApplication1
 
                 foreach (string item in lineas)
                 {
-                    if (estaciones)
-                    {
-
-                        dgConfig.Rows.Add(param1[indice], param2[indice]);
-                    }
-                    else
-                    {
-                        dgConfig.Rows.Add(Seguridad.DesEncriptar(param1[indice])); 
-                    }
+                    dgConfig.Rows.Add(param1[indice], param2[indice]);
                     indice++;
                 }
-                estaciones = !estaciones;
             }
         }
 
