@@ -33,7 +33,7 @@ namespace WindowsFormsApplication1
 
             if (auth)
             {
-                nvaConf fc = new nvaConf();
+                confMain fc = new confMain();
                 this.Hide();
                 fc.ShowDialog();
                 this.Close();

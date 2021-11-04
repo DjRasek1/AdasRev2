@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Collections.Generic;
 using System.IO;
 using RskLib;
 
@@ -44,7 +43,6 @@ namespace WindowsFormsApplication1
                 ruta = ruta.Remove(ruta.Length - 7);
                 dgConfig.Rows.Add(Siglas, ruta);
             }
-
         }
 
         private void btCancel_Click(object sender, EventArgs e)

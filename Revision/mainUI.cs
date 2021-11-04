@@ -24,8 +24,7 @@ namespace WindowsFormsApplication1
             this.ttMensaje.SetToolTip(this.btnConfig, "Configuración");
             this.ttMensaje.SetToolTip(this.btnClose, "Cerrar");
 
-            #region Recupera las siglas y rutas de las estaciones
-
+            //Recupera las siglas y rutas de las estaciones
             if (File.Exists("config.txt"))
             {
                 string[] lineas = File.ReadAllLines("config.txt");
@@ -36,8 +35,6 @@ namespace WindowsFormsApplication1
                 this.cbSelec.Items.AddRange(siglas);
                 this.cbSelec.Text = siglas[0];
             }
-
-            #endregion
         }
 
         //Boton Revisar
@@ -382,10 +379,6 @@ namespace WindowsFormsApplication1
         public static void ExtConfig(string[] siglas, string[] rutas)
         {
             Configuraciones.ExtConfig(siglas, rutas, "config.txt");
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
