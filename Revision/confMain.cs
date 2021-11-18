@@ -40,5 +40,15 @@ namespace WindowsFormsApplication1
         {
             AbrirFormulario<nvaConf>();
         }
+
+        private void btnConfigUser_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<confUsuarios>();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

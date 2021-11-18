@@ -83,9 +83,10 @@
             // tbUser
             // 
             this.tbUser.Location = new System.Drawing.Point(93, 28);
+            this.tbUser.MaxLength = 300;
             this.tbUser.Name = "tbUser";
             this.tbUser.Size = new System.Drawing.Size(168, 20);
-            this.tbUser.TabIndex = 4;
+            this.tbUser.TabIndex = 1;
             // 
             // tbPass
             // 
@@ -93,7 +94,7 @@
             this.tbPass.MaxLength = 10;
             this.tbPass.Name = "tbPass";
             this.tbPass.Size = new System.Drawing.Size(168, 20);
-            this.tbPass.TabIndex = 5;
+            this.tbPass.TabIndex = 2;
             this.tbPass.UseSystemPasswordChar = true;
             // 
             // Pass

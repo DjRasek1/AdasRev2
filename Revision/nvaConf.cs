@@ -157,7 +157,6 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Reinicie la aplicación para que los cambios tengan efecto");
 
                 #endregion
-                this.Close();
 
             } else {MessageBox.Show(this, "Debe agregar al menos una estación", 
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -117,6 +117,12 @@
     <Compile Include="confMain.Designer.cs">
       <DependentUpon>confMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="confUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confUsuarios.Designer.cs">
+      <DependentUpon>confUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Faltante.cs" />
     <Compile Include="mainUI.cs">
       <SubType>Form</SubType>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="confMain.resx">
       <DependentUpon>confMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confUsuarios.resx">
+      <DependentUpon>confUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainUI.resx">
       <DependentUpon>mainUI.cs</DependentUpon>

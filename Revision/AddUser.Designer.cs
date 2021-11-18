@@ -44,39 +44,45 @@
             this.button1.Location = new System.Drawing.Point(46, 189);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(172, 189);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
+            this.button2.TabIndex = 4;
             this.button2.Text = "Aceptar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tbConf
             // 
             this.tbConf.Location = new System.Drawing.Point(46, 130);
+            this.tbConf.MaxLength = 300;
             this.tbConf.Name = "tbConf";
             this.tbConf.Size = new System.Drawing.Size(201, 20);
-            this.tbConf.TabIndex = 2;
+            this.tbConf.TabIndex = 3;
+            this.tbConf.UseSystemPasswordChar = true;
             // 
             // tbPass
             // 
             this.tbPass.Location = new System.Drawing.Point(46, 91);
+            this.tbPass.MaxLength = 300;
             this.tbPass.Name = "tbPass";
             this.tbPass.Size = new System.Drawing.Size(201, 20);
-            this.tbPass.TabIndex = 3;
+            this.tbPass.TabIndex = 2;
+            this.tbPass.UseSystemPasswordChar = true;
             // 
             // tbNewUser
             // 
             this.tbNewUser.Location = new System.Drawing.Point(46, 52);
             this.tbNewUser.Name = "tbNewUser";
             this.tbNewUser.Size = new System.Drawing.Size(201, 20);
-            this.tbNewUser.TabIndex = 4;
+            this.tbNewUser.TabIndex = 1;
             // 
             // label1
             // 
@@ -124,6 +130,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar Usuario";
             this.ResumeLayout(false);
             this.PerformLayout();
