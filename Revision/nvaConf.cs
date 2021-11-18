@@ -42,6 +42,7 @@ namespace WindowsFormsApplication1
             {
                 ruta = ruta.Remove(ruta.Length - 7);
                 dgConfig.Rows.Add(Siglas, ruta);
+                btOk.Enabled = true;
             }
         }
 
@@ -68,6 +69,7 @@ namespace WindowsFormsApplication1
                 dgConfig.Rows.Insert(rowIndex - 1, selectedRow);
                 dgConfig.ClearSelection();
                 dgConfig.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
+                btOk.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -93,6 +95,7 @@ namespace WindowsFormsApplication1
                 dgConfig.Rows.Insert(rowIndex + 1, selectedRow);
                 dgConfig.ClearSelection();
                 dgConfig.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
+                btOk.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -106,9 +109,10 @@ namespace WindowsFormsApplication1
             {
                 if (dgConfig.RowCount != 0)
                 {
-                int rowIndex = dgConfig.SelectedCells[0].OwningRow.Index;
-                DataGridViewRow selectedRow = dgConfig.Rows[rowIndex];
-                dgConfig.Rows.Remove(selectedRow); 
+                    int rowIndex = dgConfig.SelectedCells[0].OwningRow.Index;
+                    DataGridViewRow selectedRow = dgConfig.Rows[rowIndex];
+                    dgConfig.Rows.Remove(selectedRow);
+                    btOk.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -121,8 +125,6 @@ namespace WindowsFormsApplication1
         {
             if (dgConfig.Rows.Count != 0)
             {
-                MainUI f1 = new MainUI();
-
                 if (File.Exists("config.txt"))
                 {
                     File.Delete("config.txt");
@@ -143,20 +145,8 @@ namespace WindowsFormsApplication1
                         }
                     }
                 }
-                #region Recupera las siglas y rutas de las estaciones
-
-                string[] lineas = File.ReadAllLines("config.txt");
-                int contLineas = lineas.Length;
-                string[] siglas = new string[contLineas];
-                string[] rutas = new string[contLineas];
-
-                MainUI.ExtConfig(siglas, rutas);
-
-                f1.cbSelec.Items.AddRange(siglas);
-                f1.cbSelec.Text = siglas[0];
-                MessageBox.Show("Reinicie la aplicación para que los cambios tengan efecto");
-
-                #endregion
+                MessageBox.Show("Se han guardado los cambios");
+                btOk.Enabled = false;
 
             } else {MessageBox.Show(this, "Debe agregar al menos una estación", 
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -180,17 +170,6 @@ namespace WindowsFormsApplication1
                     indice++;
                 }
             }
-        }
-
-        private void btnSwConfig(string header1, string header2, string btnAdd, 
-            string btnDel, string formText)
-        {
-            dgConfig.Columns[0].HeaderText = header1;
-            dgConfig.Columns[1].HeaderText = header2;
-            dgConfig.Rows.Clear();
-            btAdd.Text = btnAdd;
-            btDel.Text = btnDel;
-            Text = formText;
         }
     }
 }

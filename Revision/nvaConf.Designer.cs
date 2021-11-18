@@ -87,6 +87,7 @@
             // 
             // btOk
             // 
+            this.btOk.Enabled = false;
             this.btOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btOk.Location = new System.Drawing.Point(397, 323);
             this.btOk.Name = "btOk";

@@ -41,6 +41,7 @@ namespace WindowsFormsApplication1
             if (nu.DialogResult == DialogResult.OK)
             {
                 dgConfig.Rows.Add(idUser, idPass);
+                btOk.Enabled = true;
             }
         }
 
@@ -55,9 +56,10 @@ namespace WindowsFormsApplication1
             {
                 if (dgConfig.RowCount != 0)
                 {
-                int rowIndex = dgConfig.SelectedCells[0].OwningRow.Index;
-                DataGridViewRow selectedRow = dgConfig.Rows[rowIndex];
-                dgConfig.Rows.Remove(selectedRow); 
+                    int rowIndex = dgConfig.SelectedCells[0].OwningRow.Index;
+                    DataGridViewRow selectedRow = dgConfig.Rows[rowIndex];
+                    dgConfig.Rows.Remove(selectedRow);
+                    btOk.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -70,8 +72,6 @@ namespace WindowsFormsApplication1
         {
             if (dgConfig.Rows.Count != 0)
             {
-                MainUI f1 = new MainUI();
-
                 if (File.Exists("userConfig.txt"))
                 {
                     File.Delete("userConfig.txt");
@@ -87,13 +87,14 @@ namespace WindowsFormsApplication1
                         {
                             indiceFila++;
                             {
-                                sw.WriteLine(Seguridad.Encriptar(fila.Cells[0].Value.ToString()) + "," + Seguridad.Encriptar(fila.Cells[1].Value.ToString()));
+                                sw.WriteLine(Seguridad.Encriptar(fila.Cells[0].Value.ToString()) + 
+                                    "," + Seguridad.Encriptar(fila.Cells[1].Value.ToString()));
                             }
                         }
                     }
                 }
                 MessageBox.Show("Se han guardado los cambios.");
-
+                btOk.Enabled = false;
             }
             else {MessageBox.Show(this, "Debe agregar al menos un usuario", 
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);

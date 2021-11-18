@@ -15,6 +15,7 @@ namespace WindowsFormsApplication1
         public confMain()
         {
             InitializeComponent();
+            AbrirFormulario<nvaConf>();
         }
 
         //Metodo para abrir formularios dentro del panel.
@@ -29,6 +30,7 @@ namespace WindowsFormsApplication1
                 panelFormularios.Controls.Add(formulario);
                 panelFormularios.Tag = formulario;
                 formulario.Show();
+                formulario.BringToFront();
             }
             else
             {
@@ -48,7 +50,19 @@ namespace WindowsFormsApplication1
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dr = MessageBox.Show("¿Desea reiniciar la aplicación para aplicar los cambios?", "Atención", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    Application.Restart();
+                    break;
+                case DialogResult.No:
+                    this.Close();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -119,6 +119,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Autenticacion";
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Pass_FormClosed);
             this.Load += new System.EventHandler(this.Pass_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
