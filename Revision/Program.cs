@@ -16,9 +16,12 @@ namespace WindowsFormsApplication1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if(File.Exists("config.txt")){
-            Application.Run(new MainUI());
-            }else{
+            if (File.Exists("config.txt"))
+            {
+                Application.Run(new MainUI());
+            }
+            else
+            {
                 Application.Run(new Pass());
             }
         }

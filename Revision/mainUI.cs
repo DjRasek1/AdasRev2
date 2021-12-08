@@ -372,7 +372,7 @@ namespace WindowsFormsApplication1
         private void ConfiguracionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Pass pass = new Pass();
-            pass.Show();
+            pass.ShowDialog(this);
         }
 
         //Extrae la información de configuración

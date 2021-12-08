@@ -25,8 +25,10 @@ namespace WindowsFormsApplication1
             formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();
             if (formulario == null)
             {
-                formulario = new MiForm();
-                formulario.TopLevel = false;
+                formulario = new MiForm
+                {
+                    TopLevel = false
+                };
                 panelFormularios.Controls.Add(formulario);
                 panelFormularios.Tag = formulario;
                 formulario.Show();
