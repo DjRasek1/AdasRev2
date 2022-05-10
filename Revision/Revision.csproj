@@ -111,6 +111,16 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="asciiListDelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="asciiListDelForm.Designer.cs">
+      <DependentUpon>asciiListDelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitUser.cs" />
+=======
+>>>>>>> parent of 82eaf43 (Version 2.1.0.0 Actualmente en uso)
     <Compile Include="confMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +194,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include=".gitignore" />
     <None Include="app.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

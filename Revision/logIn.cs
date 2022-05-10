@@ -49,7 +49,7 @@ namespace WindowsFormsApplication1
             {
                 using (StreamWriter sw = new StreamWriter("userConfig.txt"))
                 {
-                    sw.WriteLine(Seguridad.Encriptar("DjRasek") + "," + Seguridad.Encriptar("Shortie"));
+                    sw.WriteLine(Seguridad.Encriptar(InitUser.user) + "," + Seguridad.Encriptar(InitUser.password));
                 }
             }
         }
