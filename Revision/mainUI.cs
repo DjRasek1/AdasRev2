@@ -364,8 +364,8 @@ namespace WindowsFormsApplication1
         //Lanza el módulo de informacion
         private void AcercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutBox1 ab = new AboutBox1();
-            ab.ShowDialog();
+            asciiListDelForm adf = new asciiListDelForm();
+            adf.ShowDialog();
         }
 
         //Lanza el módulo de configuración
@@ -385,7 +385,8 @@ namespace WindowsFormsApplication1
         {
             this.Close();
         }
-
+        
+        //Cambia entre busqueda de musica y comerciales
         private void BtnSwitch_Click(object sender, EventArgs e)
         {
             if (spots)
@@ -402,6 +403,13 @@ namespace WindowsFormsApplication1
                 buscando = @"AUDIO\ADASCOM\";
                 spots = true;
             }
+        }
+
+        //Lanza modulo de info al cliquear el logo
+        private void imgLogo_Click(object sender, EventArgs e)
+        {
+            AboutBox1 ab = new AboutBox1();
+            ab.ShowDialog();
         }
     }
 }

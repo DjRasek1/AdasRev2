@@ -243,7 +243,7 @@
             this.btnConfig.Image = ((System.Drawing.Image)(resources.GetObject("btnConfig.Image")));
             this.btnConfig.Location = new System.Drawing.Point(598, 517);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(48, 48);
+            this.btnConfig.Size = new System.Drawing.Size(41, 48);
             this.btnConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnConfig.TabIndex = 13;
             this.btnConfig.TabStop = false;
@@ -252,10 +252,10 @@
             // btnAbout
             // 
             this.btnAbout.BackColor = System.Drawing.Color.White;
-            this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
-            this.btnAbout.Location = new System.Drawing.Point(658, 517);
+            this.btnAbout.Image = global::WindowsFormsApplication1.Properties.Resources.BorradorIco;
+            this.btnAbout.Location = new System.Drawing.Point(645, 517);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(30, 48);
+            this.btnAbout.Size = new System.Drawing.Size(43, 48);
             this.btnAbout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnAbout.TabIndex = 14;
             this.btnAbout.TabStop = false;
@@ -329,6 +329,7 @@
             this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLogo.TabIndex = 17;
             this.imgLogo.TabStop = false;
+            this.imgLogo.Click += new System.EventHandler(this.imgLogo_Click);
             // 
             // btnSwitch
             // 
