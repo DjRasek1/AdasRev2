@@ -111,7 +111,6 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="asciiListDelForm.cs">
       <SubType>Form</SubType>
     </Compile>
